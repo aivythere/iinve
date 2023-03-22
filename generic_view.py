@@ -35,7 +35,7 @@ class GenericScreen(MDScreen):
 
         self.scroll_view = MDScrollView(do_scroll_x=True, do_scroll_y=True)
         self.main_gl = MDGridLayout(cols=1, size_hint_y=None, size_hint_x=None, spacing=0,
-                                    height=hardconfig.WINDOW_SIZE[1] * 1.5,
+                                    height=hardconfig.WINDOW_SIZE[1] * 2.5,
                                     width=hardconfig.WINDOW_SIZE[0] * 1.01)
 
         self.screen_manager_instance = screen_manager
@@ -174,7 +174,7 @@ class GenericScreen(MDScreen):
         def __init__(self, goBackScreen):
             super().__init__()
             self.size_hint_y = None
-            self.height = dp(hardconfig.WINDOW_SIZE[1] / 4)
+            self.height = dp(hardconfig.WINDOW_SIZE[1] / 8)
 
             self.back_button = ImageButton(source='back_button.png', pos_hint={'center_x': .1, 'top': .6},
                                            size_hint=[.2, .2], on_release_func=goBackScreen, inner_data='back')
@@ -193,7 +193,7 @@ class GenericScreen(MDScreen):
             self.spacing = 20
             self.padding = 30  # указываю отдельно чтгбы верх норм отображался
             self.size_hint_y = None
-            self.height = dp(hardconfig.WINDOW_SIZE[1] / 3)
+            self.height = dp(hardconfig.WINDOW_SIZE[1] / 6)
 
             self.middle_label = custom_font.SFLabel(text='Текущая цена', halign='left', size_hint=[.8, .8],
                                                     font_style='Heavy', font_size="25dp")
@@ -211,7 +211,7 @@ class GenericScreen(MDScreen):
             self.padding = 30
             self.spacing = 20
             self.size_hint_y = None
-            self.height = dp(300)
+            self.height = dp(400)
 
             self.undermiddle_title = custom_font.SFLabel(text='Прогнозы цен от ИИ', font_style="Heavy",
                                                          font_size="25dp", halign='left')
@@ -248,7 +248,7 @@ class GenericScreen(MDScreen):
                 self.radius = hardconfig.PRIMARY_CARD_RADIUS
 
                 self.size_hint_y = None
-                self.height = 140
+                self.height = 200
 
                 self.disabled = True
                 self.inner_ai_card_grid = MDGridLayout(cols=3, rows=1, padding=30, spacing=40)
@@ -291,7 +291,7 @@ class GenericScreen(MDScreen):
             self.rows = 2
             self.size_hint_y = None
             self.pos_hint = {"bottom": 1, "center_y:": 1}
-            self.height = dp(hardconfig.WINDOW_SIZE[1] / 4)
+            self.height = dp(hardconfig.WINDOW_SIZE[1] / 8)
             self.padding = 30  # указываю отедльно чтгбы верх норм отображался
             self.spacing = 20
             self.lowerhint_title = custom_font.SFLabel(text='Прогноз цены', halign='left', font_style='Heavy',
