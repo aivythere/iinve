@@ -33,10 +33,9 @@ class GenericScreen(MDScreen):
         self.gpt_predicted_price = None
         self.AI_Info_Popup_instance = None
 
-        self.scroll_view = MDScrollView(do_scroll_x=True, do_scroll_y=True)
-        self.main_gl = MDGridLayout(cols=1, size_hint_y=None, size_hint_x=None, spacing=0,
-                                    height=hardconfig.WINDOW_SIZE[1] * 2.0,
-                                    width=hardconfig.WINDOW_SIZE[0] * 1.0)
+        self.scroll_view = MDScrollView(do_scroll_x=False, do_scroll_y=True)
+        self.main_gl = MDGridLayout(cols=1, size_hint_y=None, spacing=0,
+                                    height=hardconfig.WINDOW_SIZE[1] * 2.0)
 
         self.screen_manager_instance = screen_manager
         self.last_screen = last_screen
