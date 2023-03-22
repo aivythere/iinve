@@ -24,7 +24,7 @@ class SellScreen(MDScreen):
         self.name = "SellScreen"
         self.main_scrollview = MDScrollView(do_scroll_x=True, do_scroll_y=False)
         self.maingrid = MDGridLayout(cols=1, rows=5, spacing=50, padding=30,
-                                     size_hint_x=None, width=hardconfig.WINDOW_SIZE[0] * 1.99)
+                                     size_hint_x=None, width=hardconfig.WINDOW_SIZE[0] * 1.01)
         self.ticker = None
         self.screen_manager_instance = screen_manager_instance
         self.upper_screen_reload_func = upper_screen_reload_func

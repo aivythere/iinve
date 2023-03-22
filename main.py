@@ -32,7 +32,8 @@ class InvestApp(MDApp):
         self.theme_cls.theme_style = hardconfig.APP_THEME
         self.theme_cls.primary_palette = hardconfig.APP_PRIMARY_COLOR
         self.title = "N.A.E.B Investing Bank"
-        Window.size = hardconfig.WINDOW_SIZE
+        # Window.size = hardconfig.WINDOW_SIZE
+        hardconfig.WINDOW_SIZE = Window.size
         initColors(hardconfig.APP_THEME)
 
         def chooseItemHandler(code, last_screen):

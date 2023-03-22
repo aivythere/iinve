@@ -33,7 +33,7 @@ class BuySellScreen(MDScreen):
         self.upper_screen_reload_func = upper_screen_reload_func
         self.main_scrollview = MDScrollView(do_scroll_x=True, do_scroll_y=False)
         self.bscreen_inner_grid = MDGridLayout(cols=1, spacing=50, padding=30,
-                                               size_hint_x=None, width=hardconfig.WINDOW_SIZE[0] * 1.99)
+                                               size_hint_x=None, width=hardconfig.WINDOW_SIZE[0] * 1.01)
 
         self.section_title = custom_font.SFLabel(text='Покупка', font_style="Heavy", font_size="30dp",
                                                  valign='top', halign='left')
