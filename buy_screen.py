@@ -196,7 +196,7 @@ class BuySellScreen(MDScreen):
     class AvailableBalanceCard(MDCard):
         def __init__(self):
             super().__init__()
-            self.size_hint_y = .5
+            self.size_hint_y = .3
             self.padding = 30
             self.radius = hardconfig.PRIMARY_CARD_RADIUS
             self.aval_bal_label = custom_font.AKLabelLoader(text='', halign='left', valign='top', bold=True)

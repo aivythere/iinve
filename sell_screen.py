@@ -202,7 +202,7 @@ class SellScreen(MDScreen):
                 on_release=buy_approve_func,
                 ripple_behavior=True,
                 disabled=True,
-                size_hint_y=.5
+                size_hint_y=.3
             )
             self.add_widget(self.count_textfield)
             # self.add_widget(self.calc_available_stock_to_sell)
