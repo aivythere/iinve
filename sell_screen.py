@@ -201,7 +201,8 @@ class SellScreen(MDScreen):
                 radius=hardconfig.PRIMARY_CARD_RADIUS,
                 on_release=buy_approve_func,
                 ripple_behavior=True,
-                disabled=True
+                disabled=True,
+                size_hint_y=.5
             )
             self.add_widget(self.count_textfield)
             # self.add_widget(self.calc_available_stock_to_sell)

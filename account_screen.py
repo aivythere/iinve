@@ -101,7 +101,6 @@ class AccountScreen(MDScreen):
         if len(self.middle_propertylist_instance.scrollable_layout.children) == 0:
             for i in text.keys():
                 if i != "balance_data":
-                    print(i)
                     property_item = common_libs.CardStockPropertyItem(
                         image_path=text[i]['logo_path'],
                         item_name=text[i]['name'],

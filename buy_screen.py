@@ -235,6 +235,7 @@ class BuySellScreen(MDScreen):
             )
 
             self.approve_button.size_hint_y = None
+            self.approve_button.height = hardconfig.WINDOW_SIZE[1] / 10
 
             self.add_widget(self.count_textfield)
             self.add_widget(self.prebuy_calc_label)

@@ -35,7 +35,7 @@ class GenericScreen(MDScreen):
 
         self.scroll_view = MDScrollView(do_scroll_x=True, do_scroll_y=True)
         self.main_gl = MDGridLayout(cols=1, size_hint_y=None, size_hint_x=None, spacing=0,
-                                    height=hardconfig.WINDOW_SIZE[1] * 2.5,
+                                    height=hardconfig.WINDOW_SIZE[1] * 1.5,
                                     width=hardconfig.WINDOW_SIZE[0] * 1.01)
 
         self.screen_manager_instance = screen_manager

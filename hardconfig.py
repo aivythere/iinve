@@ -46,7 +46,7 @@ PORTFOLIO_SERVER_REQUEST = f'http://{host}:8000/pf_lookup::'+'{}'
 PREBUY_SERVER_REQUEST = f'http://{host}:8000/pb_lookup::'+'{}_{}'
 PRESELL_SERVER_REQUEST = f'http://{host}:8000/ps_lookup::'+'{}_{}'
 BUY_SERVER_REQUEST = f'http://{host}:8000/BUY::'+'{}_{}_{}' # id _ ticker _ count
-SfELL_SERVER_REQUEST = f'http://{host}:8000/SELL::'+'{}_{}_{}' # id _ ticker _ count
+SELL_SERVER_REQUEST = f'http://{host}:8000/SELL::'+'{}_{}_{}' # id _ ticker _ count
 
 
 # SQL TODO Перейти на совместимую БД, постгрес НЕ ПОЙДЕТ, зайдет например Firebase
