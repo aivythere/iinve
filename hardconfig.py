@@ -1,7 +1,9 @@
 from kivy.metrics import dp
 from kivymd.uix.transition import MDSlideTransition
 import appcolor as ac
+import requests
 
+host = requests.get("https://raw.githubusercontent.com/aivythere/cryptoGood/master/my_ip").text.replace("\n","")
 # TODO Оптимизация. Удалять виджеты из памяти, все клок-запросы надо чекать на актуальность, например:
 #      В экране клок-функцией обновляется цена, тип с него выходит -> она отменяется
 #      Также главный экран. Надо глянуть ошибки на запросах, пофиксить рандомно-появляющиеся карты загораживающие
@@ -37,14 +39,14 @@ TINKOFF_TOKEN = "t.tA9KsrbSKkV4MNLid1Upq_CcfBTBQhC0mhUsgU1bY9U3H0gimvYpbd7HCWDkj
 SECURE_SERVER_REQUEST_HASH = "tXfb5LBXO"
 
 URL_REQUEST_TIMEOUT = 20
-TICKER_SERVER_REQUEST = 'http://localhost:8000/tc_lookup::{}'
-LSV_SERVER_REQUEST = 'http://localhost:8000/LSV_lookup::'
-COMMON_SERVER_REQUEST = 'http://localhost:8000/cm_lookup::'
-PORTFOLIO_SERVER_REQUEST = 'http://localhost:8000/pf_lookup::{}'
-PREBUY_SERVER_REQUEST = 'http://localhost:8000/pb_lookup::{}_{}'
-PRESELL_SERVER_REQUEST = 'http://localhost:8000/ps_lookup::{}_{}'
-BUY_SERVER_REQUEST = 'http://localhost:8000/BUY::{}_{}_{}' # id _ ticker _ count
-SELL_SERVER_REQUEST = 'http://localhost:8000/SELL::{}_{}_{}' # id _ ticker _ count
+TICKER_SERVER_REQUEST = f'http://{host}:8000/tc_lookup::'+'{}'
+LSV_SERVER_REQUEST = f'http://{host}:8000/LSV_lookup'+'::'
+COMMON_SERVER_REQUEST = f'http://{host}:8000/cm_lookup'+'::'
+PORTFOLIO_SERVER_REQUEST = f'http://{host}:8000/pf_lookup::'+'{}'
+PREBUY_SERVER_REQUEST = f'http://{host}:8000/pb_lookup::'+'{}_{}'
+PRESELL_SERVER_REQUEST = f'http://{host}:8000/ps_lookup::'+'{}_{}'
+BUY_SERVER_REQUEST = f'http://{host}:8000/BUY::'+'{}_{}_{}' # id _ ticker _ count
+SfELL_SERVER_REQUEST = f'http://{host}:8000/SELL::'+'{}_{}_{}' # id _ ticker _ count
 
 
 # SQL TODO Перейти на совместимую БД, постгрес НЕ ПОЙДЕТ, зайдет например Firebase
