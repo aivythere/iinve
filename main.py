@@ -1,3 +1,7 @@
+from kivy.config import Config
+
+Config.set('graphics', 'maxfps', '120')
+
 from kivymd.app import MDApp
 from kivymd.uix.screenmanager import MDScreenManager
 import stocklist

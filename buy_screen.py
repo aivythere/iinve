@@ -6,6 +6,7 @@ from kivy.clock import Clock
 from kivy.metrics import dp
 from kivy.network.urlrequest import UrlRequest
 from kivy.uix.image import Image
+from kivy.uix.screenmanager import NoTransition
 from kivy.utils import get_color_from_hex
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.card import MDCard
@@ -15,7 +16,6 @@ from kivymd.uix.screen import MDScreen
 import sqlite3
 from kivymd.uix.scrollview import MDScrollView
 from kivymd.uix.textfield import MDTextField
-from kivymd.uix.transition import MDSlideTransition
 import hardconfig
 import appcolor
 import common_libs
@@ -95,11 +95,9 @@ class BuySellScreen(MDScreen):
 
     def goBackScreen(self, *args):
         if self.screen_manager_instance.current == self.name:
-            self.screen_manager_instance.transition = MDSlideTransition(direction='right',
-                                                                        duration=hardconfig.ANY_TRANSITION_DURATION)
             self.upper_screen_reload_func(self.ticker)
+            self.screen_manager_instance.transition = NoTransition()
             self.screen_manager_instance.current = "StockViewing"
-            self.screen_manager_instance.transition = hardconfig.DEFAULT_TRANSITION
 
     def buyStocks(self, *args):
         cursor = sqlite3.connect('mydata.db').cursor()

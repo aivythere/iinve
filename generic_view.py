@@ -4,12 +4,12 @@ from kivy.animation import Animation
 from kivy.clock import Clock
 from kivy.metrics import dp
 from kivy.network.urlrequest import UrlRequest
+from kivy.uix.screenmanager import NoTransition
 from kivy.utils import get_color_from_hex
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.card import MDCard
 from kivymd.uix.scrollview import MDScrollView
-from kivymd.uix.transition import MDSlideTransition
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.gridlayout import MDGridLayout
 from kivy.graphics import Color, Rectangle
@@ -156,18 +156,20 @@ class GenericScreen(MDScreen):
     def buy_sell_handler(self, *args):
         if args[-1] == "buy":
             self.buy_screen_reload_func(self.ticker)
+            self.screen_manager_instance.transition = NoTransition()
             self.screen_manager_instance.current = "BuyScreen"
         else:
             self.sell_screen_reload_func(self.ticker)
+            self.screen_manager_instance.transition = NoTransition()
+
             self.screen_manager_instance.current = "SellScreen"
 
 
     def goBackScreen(self, *args):
         if self.screen_manager_instance.current == self.name:
-            self.screen_manager_instance.transition = MDSlideTransition(direction='right',
-                                                                        duration=hardconfig.ANY_TRANSITION_DURATION)
+            self.screen_manager_instance.transition = NoTransition()
+
             self.screen_manager_instance.current = self.last_screen
-            self.screen_manager_instance.transition = hardconfig.DEFAULT_TRANSITION
 
     class TopTitleBar(MDFloatLayout):
         def __init__(self, goBackScreen):

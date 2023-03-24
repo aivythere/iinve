@@ -1,6 +1,7 @@
 import certifi
 from kivy.animation import Animation
 from kivy.metrics import dp
+from kivy.uix.screenmanager import NoTransition
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.gridlayout import MDGridLayout
@@ -10,7 +11,6 @@ from kivymd.uix.scrollview import MDScrollView
 from kivy.network.urlrequest import UrlRequest
 import hardconfig
 from kivymd.uix.card import MDCard
-from kivy.uix.screenmanager import NoTransition
 import custom_font
 import data_types
 from kivymd.uix.list import ImageLeftWidget
@@ -237,6 +237,5 @@ class StockScreen(MDScreen):
         def item_on_press(self, *args):
             if self.screen_manager_instance.current != args[-1]:
                 self.screen_manager_instance.transition = NoTransition()
-                self.screen_manager_instance.current = args[-1]
-                self.screen_manager_instance.transition = hardconfig.DEFAULT_TRANSITION
 
+                self.screen_manager_instance.current = args[-1]

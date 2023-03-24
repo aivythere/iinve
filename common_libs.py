@@ -183,7 +183,8 @@ class NavigationBar(MDFloatLayout):
         if self.screen_manager_instance.current != args[-1]:
             self.screen_manager_instance.transition = NoTransition()
             self.screen_manager_instance.current = args[-1]
-            self.screen_manager_instance.transition = hardconfig.DEFAULT_TRANSITION
+            self.screen_manager_instance.transition = NoTransition()
+
 
 
 class BuySellButotns(MDGridLayout):

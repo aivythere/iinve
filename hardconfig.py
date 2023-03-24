@@ -1,5 +1,5 @@
 from kivy.metrics import dp
-from kivymd.uix.transition import MDSlideTransition
+from kivy.uix.screenmanager import NoTransition
 import appcolor as ac
 import requests
 
@@ -16,8 +16,8 @@ APP_THEME = "Dark"
 APP_PRIMARY_COLOR = "Blue"
 APP_MATERIAL_STYLE = "M2"
 WINDOW_SIZE = (360, 650)
-ANY_TRANSITION_DURATION = 0.4
-DEFAULT_TRANSITION = MDSlideTransition(direction='left', duration=ANY_TRANSITION_DURATION)
+ANY_TRANSITION_DURATION = 0.7
+DEFAULT_TRANSITION = NoTransition()
 PRIMARY_TEXT_COLOR = ac.white_rgba if APP_THEME == "Dark" else ac.black_rgba
 TEXT_UPDATE_COLOR = ac.white_update if APP_THEME == "Dark" else ac.black_update
 PRIMARY_CARD_COLOR = ac.card_color_dark_theme if APP_THEME == "Dark" else ac.card_color_light_theme
